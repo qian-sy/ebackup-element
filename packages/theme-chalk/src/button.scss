@@ -10,6 +10,7 @@
   white-space: nowrap;
   cursor: pointer;
   background: $--button-default-background-color;
+  box-shadow: inset 0px 1px 0px lighten($--color-white, 20%), 0px 5px 0px 0px darken($--color-white, 65%), 0px 10px 5px #999;
   border: $--border-base;
   border-color: $--button-default-border-color;
   color: $--button-default-font-color;
@@ -38,6 +39,7 @@
     color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
     border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
     outline: none;
+    box-shadow: inset 0px 1px 0px lighten($--color-white, 20%), 0px 2px 0px 0px darken($--color-white, 65%), 0px 5px 3px #999;
   }
 
   &::-moz-focus-inner {
@@ -84,6 +86,7 @@
 
     &.el-button--text {
       background-color: transparent;
+      box-shadow: 0 0 0 transparent;
     }
 
     &.is-plain {
@@ -123,18 +126,58 @@
   }
   @include m(primary) {
     @include button-variant($--button-primary-font-color, $--button-primary-background-color, $--button-primary-border-color);
+    @include when(circle) {
+      box-shadow: 0 3px 8px darken($--color-white, 20%), inset 0 2px 3px lighten($--color-white, 80%);
+      border: solid 1px transparent;
+    }
+    box-shadow: inset 0px 1px 0px lighten($--button-primary-background-color, 20%), 0px 5px 0px 0px darken($--button-primary-background-color, 20%), 0px 10px 5px #999;
+    &:active {
+      box-shadow: inset 0px 1px 0px lighten($--button-primary-background-color, 20%), 0px 2px 0px 0px darken($--button-primary-background-color, 20%), 0px 5px 3px #999;
+    }
   }
   @include m(success) {
     @include button-variant($--button-success-font-color, $--button-success-background-color, $--button-success-border-color);
+    @include when(circle) {
+      box-shadow: 0 3px 8px darken($--color-white, 20%), inset 0 2px 3px lighten($--color-white, 80%);
+      border: solid 1px transparent;
+    }
+    box-shadow: inset 0px 1px 0px lighten($--button-success-background-color, 20%), 0px 5px 0px 0px darken($--button-success-background-color, 20%), 0px 10px 5px #999;
+    &:active {
+      box-shadow: inset 0px 1px 0px lighten($--button-success-background-color, 20%), 0px 2px 0px 0px darken($--button-success-background-color, 20%), 0px 5px 3px #999;
+    }
   }
   @include m(warning) {
     @include button-variant($--button-warning-font-color, $--button-warning-background-color, $--button-warning-border-color);
+    @include when(circle) {
+      box-shadow: 0 3px 8px darken($--color-white, 20%), inset 0 2px 3px lighten($--color-white, 80%);
+      border: solid 1px transparent;
+    }
+    box-shadow: inset 0px 1px 0px lighten($--button-warning-background-color, 20%), 0px 5px 0px 0px darken($--button-warning-background-color, 20%), 0px 10px 5px #999;
+    &:active {
+      box-shadow: inset 0px 1px 0px lighten($--button-warning-background-color, 20%), 0px 2px 0px 0px darken($--button-warning-background-color, 20%), 0px 5px 3px #999;
+    }
   }
   @include m(danger) {
     @include button-variant($--button-danger-font-color, $--button-danger-background-color, $--button-danger-border-color);
+    @include when(circle) {
+      box-shadow: 0 3px 8px darken($--color-white, 20%), inset 0 2px 3px lighten($--color-white, 80%);
+      border: solid 1px transparent;
+    }
+    box-shadow: inset 0px 1px 0px lighten($--button-danger-background-color, 20%), 0px 5px 0px 0px darken($--button-danger-background-color, 20%), 0px 10px 5px #999;
+    &:active {
+      box-shadow: inset 0px 1px 0px lighten($--button-danger-background-color, 20%), 0px 2px 0px 0px darken($--button-danger-background-color, 20%), 0px 5px 3px #999;
+    }
   }
   @include m(info) {
     @include button-variant($--button-info-font-color, $--button-info-background-color, $--button-info-border-color);
+    @include when(circle) {
+      box-shadow: 0 3px 8px darken($--color-white, 20%), inset 0 2px 3px lighten($--color-white, 80%);
+      border: solid 1px transparent;
+    }
+    box-shadow: inset 0px 1px 0px lighten($--button-info-background-color, 20%), 0px 5px 0px 0px darken($--button-info-background-color, 20%), 0px 10px 5px #999;
+    &:active {
+      box-shadow: inset 0px 1px 0px lighten($--button-info-background-color, 20%), 0px 2px 0px 0px darken($--button-info-background-color, 20%), 0px 5px 3px #999;
+    }
   }
   @include m(medium) {
     @include button-size($--button-medium-padding-vertical, $--button-medium-padding-horizontal, $--button-medium-font-size, $--button-medium-border-radius);
@@ -158,6 +201,7 @@
     border-color: transparent;
     color: $--color-primary;
     background: transparent;
+    box-shadow: 0 0 0 transparent;
     padding-left: 0;
     padding-right: 0;
 
@@ -166,17 +210,20 @@
       color: mix($--color-white, $--color-primary, $--button-hover-tint-percent);
       border-color: transparent;
       background-color: transparent;
+      box-shadow: 0 0 0 transparent;
     }
     &:active {
       color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
       border-color: transparent;
       background-color: transparent;
+      box-shadow: 0 0 0 transparent;
     }
 
     &.is-disabled,
     &.is-disabled:hover,
     &.is-disabled:focus {
       border-color: transparent;
+      box-shadow: 0 0 0 transparent;
     }
   }
 }
