@@ -318,13 +318,16 @@
   @include e(prepend) {
     border-right: 0;
     border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    border-bottom-right-radius: 3px;
   }
 
   @include e(append) {
     border-left: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    .el-button {
+      box-shadow: 0 0 0 0 !important;
+    }
   }
 
   @include m(prepend) {
