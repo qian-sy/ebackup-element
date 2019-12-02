@@ -288,9 +288,12 @@
     padding: 0 20px;
     width: 1px;
     white-space: nowrap;
-
+    
     &:focus {
       outline: none;
+    }
+    .el-button--default {
+      box-shadow: 0 0 0 0!important;
     }
 
     .el-select,
