@@ -101,6 +101,7 @@
 
   .el-range-input {
     line-height: 1;
+    background-color: $--color-white;
   }
 
   @include when(active) {
